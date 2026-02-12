@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 380px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #333;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            background: #4facfe;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .search-box button:hover {
+            background: #3399ff;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .loading {
+            text-align: center;
+            color: #555;
+        }
+
+        .current-weather {
+            text-align: center;
+        }
+
+        .location {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .date {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .current-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            gap: 15px;
+        }
+
+        .weather-icon {
+            font-size: 50px;
+        }
+
+        .temperature {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #555;
+            text-transform: capitalize;
+        }
+
+        .weather-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .daily-item {
+            background: #f1f7ff;
+            padding: 10px;
+            border-radius: 10px;
+            width: 30%;
+            text-align: center;
+        }
+
+        .label {
+            font-size: 12px;
+            color: #555;
+        }
+
+        .value {
+            font-size: 14px;
+            font-weight: bold;
+            color: #222;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>⛅ Weather Dashboard</h1>
+        <p>Your real-time weather companion</p>
+    </div>
+
+    <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name..." value="India">
+        <button onclick="searchWeather()">Search</button>
+    </div>
+
+    <div id="errorMsg" class="error" style="display:none;">City not found</div>
+    <div id="loading" class="loading" style="display:none;">Loading weather data...</div>
+
+    <div id="weatherContent">
+        <div class="current-weather">
+            <div class="location" id="location">India</div>
+            <div class="date" id="date">-- -- ----</div>
+
+            <div class="current-main">
+                <div class="weather-icon" id="currentIcon">☀️</div>
+                <div>
+                    <div class="temperature" id="temperature">30°C</div>
+                    <div class="description" id="description">Sunny</div>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="daily-item">
+                    <div class="label">Feels Like</div>
+                    <div class="value" id="feelsLike">32°C</div>
+                </div>
+
+                <div class="daily-item">
+                    <div class="label">Humidity</div>
+                    <div class="value" id="humidity">60%</div>
+                </div>
+
+                <div class="daily-item">
+                    <div class="label">Wind Speed</div>
+                    <div class="value" id="windSpeed">10 km/h</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function searchWeather() {
+        alert("Connect API here (OpenWeatherMap)");
+    }
+</script>
+
+</body>
+</html>
